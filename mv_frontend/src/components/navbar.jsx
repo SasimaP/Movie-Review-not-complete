@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar-dark bg-dark">
+    <nav className="navbar">
       <ul className="navbar-nav">
         <div className="nav-group-left">
           <li className="nav-item">
