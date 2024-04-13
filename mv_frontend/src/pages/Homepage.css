@@ -1,0 +1,17 @@
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.search-bar{
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+
+  .btn-search {
+    margin: 10px;
+  }
