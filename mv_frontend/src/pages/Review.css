@@ -1,0 +1,54 @@
+.reviewForm {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  padding: 30px;
+}
+
+h1 {
+  color: #404040;
+  margin: 20px 0px 20px 0px;
+}
+
+.left-side, .right-side {
+  width: 45%;
+}
+
+.genre-select {
+  padding: 5px 10px 5px 10px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #404040;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+}
+
+.reviewForm label {
+  display: block;
+  margin-bottom: 5px;
+  color: #404040;
+}
+
+.reviewForm input,
+.reviewForm textarea,
+.reviewForm select{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #BFBFBF;
+  background-color: #FFFFFF;
+}
+
+.reviewForm button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #404040;
+  color: #FFFFFF;
+  cursor: pointer;
+}

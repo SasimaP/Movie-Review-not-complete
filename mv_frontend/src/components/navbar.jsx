@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css';
+import './Navbar.css';
 
-const Navbar = () => {
+function Navbar() {
+  const genreItems = ['Action', 'Comedy', 'Drama', 'Fantasy', 'Investigation', 'Romance', 'Sci-fi', 'Thriller'];
+  const countryItems = ['Chinese', 'England', 'Japan', 'Korea', 'Thai'];
+
   const [moviesOpen, setMoviesOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
 
@@ -34,16 +37,11 @@ const Navbar = () => {
               Movies
             </a>
             {moviesOpen && (
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Comedy</a></li>
-                <li><a className="dropdown-item" href="#">Drama</a></li>
-                <li><a className="dropdown-item" href="#">Fantasy</a></li>
-                <li><a className="dropdown-item" href="#">Investigation</a></li>
-                <li><a className="dropdown-item" href="#">Romance</a></li>
-                <li><a className="dropdown-item" href="#">Sci-fi</a></li>
-                <li><a className="dropdown-item" href="#">Thriller</a></li>
-              </ul>
+              <>
+                {genreItems.map((genreItem, index) => (
+                  <li key={index} className='genre-menu'>{genreItem}</li>
+                ))}
+              </>
             )}
           </li>
           <li className="nav-item dropdown">
@@ -57,13 +55,11 @@ const Navbar = () => {
               Countries
             </a>
             {countriesOpen && (
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Chinese</a></li>
-                <li><a className="dropdown-item" href="#">England</a></li>
-                <li><a className="dropdown-item" href="#">Japan</a></li>
-                <li><a className="dropdown-item" href="#">Korea</a></li>
-                <li><a className="dropdown-item" href="#">Thai</a></li>
-              </ul>
+              <>
+              {countryItems.map((countryItems, index) => (
+                <li key={index} className='genre-menu'>{countryItems}</li>
+              ))}
+            </>
             )}
           </li>
           <li className="nav-item">
