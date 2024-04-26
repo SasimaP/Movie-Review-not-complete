@@ -2,7 +2,7 @@ import React from 'react';
 import '../pages/Homepage.css'; 
 import Navbar from '../components/Navbar';
 
-const HomePage = () => {
+function HomePage() {
   return (
     <>
     <Navbar/>

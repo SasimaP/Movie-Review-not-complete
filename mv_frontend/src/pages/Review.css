@@ -1,6 +1,6 @@
 .reviewForm {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 30px;
   background-color: #FFFFFF;
   padding: 30px;
@@ -8,7 +8,7 @@
 
 h1 {
   color: #404040;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0px 40px 0px;
 }
 
 .left-side, .right-side {
@@ -18,7 +18,7 @@ h1 {
 .genre-select {
   padding: 5px 10px 5px 10px;
   background-color: #FFFFFF;
-  color: #000000;
+  color: #404040;
   border: 2px solid #404040;
   border-radius: 20px;
   display: inline-block;
@@ -37,18 +37,40 @@ h1 {
 .reviewForm select{
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #BFBFBF;
   background-color: #FFFFFF;
+  color: #000000;
 }
 
-.reviewForm button[type="submit"] {
-  width: 100%;
-  padding: 10px;
+.post-button-container {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+.post-button {
+  padding: 10px 20px;
+  background-color: #404040;
+  color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.dropdown {
+  width: 50%;
+  height: 80px;
+}
+
+.small-button {
+  font-size: 0.8em;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+}
+
+.selected {
   background-color: #404040;
   color: #FFFFFF;
-  cursor: pointer;
 }
