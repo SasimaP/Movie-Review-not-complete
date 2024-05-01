@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Review.css';
+import AlertDialogError from '../components/alertDialog/alertError';
+import ToastSuccess from '../components/toast';
 
 function ReviewForm() {
   const genreItems = ['Action', 'Comedy', 'Drama', 'Fantasy', 'Investigation', 'Romance', 'Sci-fi', 'Thriller'];
@@ -12,6 +14,9 @@ function ReviewForm() {
   const [director, setDirector] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
 
+  const [openToast, setOpenToast] = useState(false);
+  const [openAlertDialogError, setOpenAlertDialogError] = useState(false);
+
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     // Handle image upload logic
@@ -19,7 +24,6 @@ function ReviewForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic
     console.log('Form submitted:', {
       movieTitle,
       plot,
@@ -28,6 +32,15 @@ function ReviewForm() {
       director,
       selectedGenre,
     });
+    setOpenToast(true);
+  };
+
+  const handleCloseToast = () => {
+    setOpenToast(false);
+  };
+
+  const handleOnCloseDialog = () => {
+    setOpenAlertDialogError(false);
   };
 
   const [funRating, setFunRating] = useState('');
@@ -104,6 +117,13 @@ function ReviewForm() {
           <button className='post-button' type="submit">Post</button>
         </div>
       </div>
+      <ToastSuccess
+        openToast={openToast}
+        handleCloseToast={handleCloseToast}
+        text="Posted successfully"
+        showClose={true}
+      />
+      <AlertDialogError openAlertDialog={openAlertDialogError} handleOnCloseDialog={handleOnCloseDialog} />
     </form>
   );
 };

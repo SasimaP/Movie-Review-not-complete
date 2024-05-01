@@ -2,49 +2,40 @@ import React from "react";
 import CheckCircle from "@mui/icons-material/CheckCircle";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Snackbar, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from '@mui/system';
 
-const useStyles = makeStyles({
-  snackbarStyleSuccess: {
-    width: 500,
-  },
-  textToast: {
-    color: "rgb(15, 92, 46)",
-    fontWeight: 500,
-    fontSize: 16,
+
+const StyledSnackbar = styled(Snackbar)({
+  width: 500,
+  "& .MuiSnackbarContent-root": {
+    backgroundColor: "#E0F8D1",
   },
 });
 
-const ToastSuccess = ({ openToast, handleCloseToast, text, showClose }) => {
-  const classes = useStyles();
+const StyledTypography = styled(Typography)({
+  color: "rgb(15, 92, 46)",
+  fontWeight: 500,
+  fontSize: 16,
+});
 
+const ToastSuccess = ({ openToast, handleCloseToast, text, showClose }) => {
   return (
-    <Snackbar
+    <StyledSnackbar
       anchorOrigin={{
         vertical: "top",
         horizontal: "center",
       }}
       open={openToast}
       onClose={handleCloseToast}
-      ContentProps={{
-        "aria-describedby": "message-id",
-        className: classes.snackbarStyleSuccess,
-      }}
-      sx={{
-        "& .MuiSnackbarContent-root": {
-          backgroundColor: "#E0F8D1",
-        },
-      }}
       message={
         <Box display="flex" alignItems="center" justifyContent="center">
           <CheckCircle color="success" onClick={handleCloseToast} />
-          <Typography
+          <StyledTypography
             variant="h6"
             sx={{ ml: 2, whiteSpace: "pre-line" }}
-            className={classes.textToast}
           >
             {text}
-          </Typography>
+          </StyledTypography>
           {showClose && (
             <CloseIcon
               sx={{
