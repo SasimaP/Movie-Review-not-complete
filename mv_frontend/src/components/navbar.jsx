@@ -20,11 +20,10 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">
-        <div className="nav-group-left">
+      <nav className="navbar-nav">
+        <ul className="nav-group-left">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <a className="nav-link" href="#">Home</a>
           </li>
           <li className="nav-item dropdown">
             <a
@@ -68,17 +67,16 @@ function Navbar() {
           <li className="nav-item">
             <a className="nav-link" href="#">Review</a>
           </li>
-        </div>
+        </ul>
 
-        <div className='nav-group-right'>
+        <ul className='nav-group-right'>
           <li className="nav-item right">
             <Link to="/login">Login</Link>
             <span className="nav-separator"></span>
             <Link to="/login">Logout</Link>
           </li>
-        </div>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
   );
 }
 
